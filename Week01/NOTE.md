@@ -1,4 +1,4 @@
-学习笔记
+
 
 <a name="zAMBQ"></a>
 ### 复杂度
@@ -104,9 +104,8 @@ for i in range(len(nums)-2)
       fast_node = fast_node.next.next
       slow_node = slow_node.next
 ```
-**
-
-**<br />不管是顺序栈还是链式栈，入栈、出栈只涉及栈顶个别数据的操作，所以时间复杂度都是 O(1)。<br />在入栈和出栈过程中，只需要一两个临时变量存储空间，所以空间复杂度是 O(1)
+**<br />
+<br />**<br />不管是顺序栈还是链式栈，入栈、出栈只涉及栈顶个别数据的操作，所以时间复杂度都是 O(1)。<br />在入栈和出栈过程中，只需要一两个临时变量存储空间，所以空间复杂度是 O(1)
 
 <a name="zHruP"></a>
 #### 有效的括号
@@ -126,7 +125,7 @@ for i in range(len(nums)-2)
 
 <br />
 <a name="04jHe"></a>
-#### 滑动窗口最大值
+#### [滑动窗口最大值](https://leetcode-cn.com/problems/sliding-window-maximum/)
 
 <br />最简单，最容易想到的解法为什么总是暴力解法？？？？？<br />双层遍历，直接超出时间限制。
 
@@ -137,7 +136,8 @@ for i in range(len(nums)-2)
 <br />![27af2b52e80803bcb7a8285dbd27cfa9292a6cf6dd0a6454454d6d3357da15c6-image.png](https://cdn.nlark.com/yuque/0/2020/png/1072113/1591893210515-ee122dc5-52cd-4bc5-bfd2-e3be0ec64534.png#align=left&display=inline&height=824&margin=%5Bobject%20Object%5D&name=27af2b52e80803bcb7a8285dbd27cfa9292a6cf6dd0a6454454d6d3357da15c6-image.png&originHeight=824&originWidth=1406&size=78263&status=done&style=none&width=1406)<br />
 <br />虽然已经在审题10分钟后，直接去看了题解，但还是被这道题困扰了半天的时间，主要不懂的点在于窗口中，出队和入队的临界条件。deque[0] <= i-k  和  i>=k-1  分别是队列中窗口左临界点出队和第一个窗口的右临界点开始选择最大值。<br />
 <br />后来还是放下浮躁的心，**手动在纸上debug流程，效果真的显著，真的显著！！！！**。在idea中分析流程总有着一种雾里看花的感觉。随后有手写了两边代码，又在leetcode上打了一遍，直接运行通过。<br />
-<br />
+<br />**时间复杂度：O(N)**，每个元素被处理两次- 其索引被添加到双向队列中和被双向队列删除。<br />
+<br />**空间复杂度：O(N)**，输出数组使用了 O(N−k+1) 空间，双向队列使用了O(k)。<br />
 
 <a name="0zSVK"></a>
 #### 柱状图中最大的矩形
@@ -192,13 +192,32 @@ def reverse(self, nums, start, end):
 
 <a name="8M9Q6"></a>
 #### 合并两个有序数组
-<br />双指针，从后向前遍历，比较两个数组尾元素的大小<br />
 
+<br />双指针，从后向前遍历，比较两个数组尾元素的大小<br />
 
 <a name="clUBu"></a>
 #### 合并两个有序链表
+
 <br />递归递归递归～～～ 为什么我想不到递归，即使想到了递归，重复最小项也没有想到～～！！～～！！<br />
-<br />
+
+<a name="L1AB1"></a>
+#### [验证回文串](https://leetcode-cn.com/problems/valid-palindrome/)
+
+<br />此题利用双指针，栈，或者reverse都可以。其中对于初始字符串的处理可以优雅一些。
+```python
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        str = "".join(char.lower() for char in s if char.isalnum())
+        n = len(str)
+        left, right = 0, n-1
+        while left<right:
+            if str[left] != str[right]:
+                return False
+            left+=1
+            right-=1
+        return True
+```
+
 
 
 ---
@@ -210,17 +229,16 @@ def reverse(self, nums, start, end):
 
 - 左右夹逼
 
-
-<br />盛最多水的容器（数组） 三数之和（数组）<br />
+盛最多水的容器（数组） 三数之和（数组），回文串<br />
 
 - 快慢指针
 
-<br />环形链表 删除排序数组中的重复项<br />
+环形链表 删除排序数组中的重复项<br />
 
 - 借助Map
 
-<br />两数之和  有效的括号<br />
+两数之和  有效的括号<br />
 
 - 单调栈
 
-<br />柱状图中最大的矩形
+柱状图中最大的矩形
