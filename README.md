@@ -36,14 +36,14 @@
 
 # 刷题进度表
 
-| 题目 | 首刷时间 | 最近刷时间 | 毒毒毒毒毒*n |
+| 题目 | 首刷时间 | 最近刷时间 | 毒*n |
 | :---: | :---: | :---: | :---: |
 | [分发饼干](https://leetcode-cn.com/problems/assign-cookies/) | 2020-07-02 | 2020-07-02 | ✅ |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
+| [买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/) | 2020-07-03 | 2020-07-04 | ✅✅ |
+| [验证二叉搜索树](https://leetcode-cn.com/problems/validate-binary-search-tree/) | 2020-06-26  | 2020-07-03 | ✅✅✅✅✅ |
+| [二叉树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/) | 2020-06-26  | 2020-07-03 | ✅✅✅✅✅✅ |
+| [买卖股票的最佳时机 II](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/) | 2020-07-03 | 2020-07-03 | ✅✅ |
+| [买卖股票的最佳时机 III](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii/) | 2020-07-03 | 2020-07-03 | ✅✅ |
+| [最佳买卖股票时机含冷冻期](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/)| 2020-07-04 | 2020-07-04 | ✅ |
+|[买卖股票的最佳时机含手续费](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/)| 2020-07-04 | 2020-07-04 | ✅ |
+|[买卖股票的最佳时机 IV](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iv/)| 2020-07-04 | 2020-07-04 | ✅ |
