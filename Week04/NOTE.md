@@ -1,5 +1,5 @@
-<a name="CidGs"></a>
-### 大纲
+<a name="jqo2o"></a>
+## 大纲
 深度优先：借用栈<br />广度优先：借用队列<br />
 <br />贪心算法的难点在于，怎么证明某个题目可以使用贪心法。
 
@@ -9,7 +9,8 @@
 - 有时需要从后向前贪心
 
 
-<br /> 二分法模板
+<br /> 二分法模板<br />
+![截屏2020-07-05 上午11.05.55.png](https://cdn.nlark.com/yuque/0/2020/png/1072113/1593951039266-be0808e3-bd16-40b9-8f95-9130f7158b3d.png#align=left&display=inline&height=1018&margin=%5Bobject%20Object%5D&name=%E6%88%AA%E5%B1%8F2020-07-05%20%E4%B8%8A%E5%8D%8811.05.55.png&originHeight=1018&originWidth=1868&size=743863&status=done&style=none&width=1868)
 ```python
 
 left, right = 0, len(array) - 1 
@@ -488,7 +489,7 @@ LeetCode 123[买卖股票的最佳时机 III](https://leetcode-cn.com/problems/b
 
 <a name="KeQXf"></a>
 #### [买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/)
-题解<br />根据labaladong的股票类算法模板，这里更为详细。<br />[团灭股票类问题](https://github.com/labuladong/fucking-algorithm/blob/master/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%9B%A2%E7%81%AD%E8%82%A1%E7%A5%A8%E9%97%AE%E9%A2%98.md)<br />关于状态方程的转换，liweiwei解释的也很好<br />![截屏2020-07-04 下午4.45.25.png](https://cdn.nlark.com/yuque/0/2020/png/1072113/1593852395820-4276e6db-1641-40f5-9835-71bd01a37385.png#align=left&display=inline&height=1122&margin=%5Bobject%20Object%5D&name=%E6%88%AA%E5%B1%8F2020-07-04%20%E4%B8%8B%E5%8D%884.45.25.png&originHeight=1122&originWidth=1666&size=252391&status=done&style=none&width=1666)<br />代码<br />
+题解<br />根据labaladong的股票类算法模板，这里更为详细。<br />[团灭股票类问题](https://github.com/labuladong/fucking-algorithm/blob/master/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%9B%A2%E7%81%AD%E8%82%A1%E7%A5%A8%E9%97%AE%E9%A2%98.md)<br />关于状态方程的转换，liweiwei解释的也很好<br />![截屏2020-07-04 下午4.45.25.png](https://cdn.nlark.com/yuque/0/2020/png/1072113/1593852395820-4276e6db-1641-40f5-9835-71bd01a37385.png#align=left&display=inline&height=1122&margin=%5Bobject%20Object%5D&name=%E6%88%AA%E5%B1%8F2020-07-04%20%E4%B8%8B%E5%8D%884.45.25.png&originHeight=1122&originWidth=1666&size=252391&status=done&style=none&width=1666)<br />代码
 ```python
 class Solution(object):
     def maxProfit(self, prices):
@@ -801,11 +802,39 @@ class Solution(object):
 
 k<=2时，就满足了[买卖股票的最佳时机 III](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii/)这道题的套路。最后就是将这两道题的套路合并在一起。
 
-最后，不要忘记判断  if n <= 1 : return 0<br />
+最后，不要忘记判断  if n <= 1 : return 0
 
+<a name="OzqZU"></a>
+### 二分查找
+<a name="hLbDN"></a>
+#### [x 的平方根](https://leetcode-cn.com/problems/sqrtx/)
+题解：首先我们要确定，这道题可不可以用二分查找。x = i^2，x为抛物线，i为单调递增，并且存在上下界。<br />
+<br />代码：
+```python
+class Solution(object):
+    def mySqrt(self, x):
+        """
+        :type x: int
+        :rtype: int
+        """
+        left, right = 1, x
+        while left <= right:
+            mid = left+(right-left)//2
+            if mid*mid == x: return mid
+            elif mid*mid > x: right = mid - 1
+            else: left = mid + 1
+        # 退出条件为left>right
+        return right
+```
+复杂度分析：<br />
+<br />时间复杂度：O(logN)，二分法的时间复杂度是对数级别的。<br />空间复杂度：O(1)，使用了常数个数的辅助空间用于存储和比较。<br />
+<br />总结：<br />代码中 `left + (right - left) // 2` 就和 `(left + right) / 2` 的结果相同，但是有效防止了 `left` 和 `right` 太大直接相加导致溢出。<br />
+<br />关于边界问题，还需要进一步总结规律，例如这道题，left定义为0或者1都是可以的。
 
 ---
 
 <a name="2LJmN"></a>
 ### 总结
-DFS代码模版<br />[https://shimo.im/docs/UdY2UUKtliYXmk8t/read](https://shimo.im/docs/UdY2UUKtliYXmk8t/read)<br />BFS代码模板<br />[https://shimo.im/docs/ZBghMEZWix0Lc2jQ/read](https://shimo.im/docs/ZBghMEZWix0Lc2jQ/read)
+
+<br />[团灭二分查找](https://github.com/cpeixin/leetcode-bbbbrent/blob/master/binary_search/%E5%9B%A2%E7%81%AD%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE.md)<br />
+<br />DFS代码模版<br />[https://shimo.im/docs/UdY2UUKtliYXmk8t/read](https://shimo.im/docs/UdY2UUKtliYXmk8t/read)<br />BFS代码模板<br />[https://shimo.im/docs/ZBghMEZWix0Lc2jQ/read](https://shimo.im/docs/ZBghMEZWix0Lc2jQ/read)

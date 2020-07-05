@@ -34,7 +34,7 @@
 
 [团灭买卖股票问题（python）实现](https://github.com/cpeixin/leetcode-bbbbrent/blob/master/dp/%E5%9B%A2%E7%81%AD%20LeetCode%20%E8%82%A1%E7%A5%A8%E4%B9%B0%E5%8D%96%E9%97%AE%E9%A2%98.md)
 
-
+[团灭二分查找](https://github.com/cpeixin/leetcode-bbbbrent/blob/master/binary_search/%E5%9B%A2%E7%81%AD%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE.md)
 
 
 
