@@ -53,7 +53,7 @@
 ### 刷题列表
 | 题目 | 首刷时间 | 最近刷时间 | 毒*n | 复杂度 | 代码片段 |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| [`前 K 个高频元素`](https://leetcode-cn.com/problems/top-k-frequent-elements/) | 2020-06-16 | 2020-07-07 | ✅✅ |  | heapq.heappush(heap, (-dict[key], key)) |
+| [前 K 个高频元素](https://leetcode-cn.com/problems/top-k-frequent-elements/) | 2020-06-16 | 2020-07-07 | ✅✅ |  | heapq.heappush(heap, (-dict[key], key)) |
 | [数对和](https://leetcode-cn.com/problems/pairs-with-sum-lcci/) | 2020-06-23 | 2020-07-07 | ✅✅ |  | if dict.get(target-num, 0) == 0<br />dict[num]+=1 |
 | [两两交换链表中的节点](https://leetcode-cn.com/problems/swap-nodes-in-pairs/) | 2020-06-07 | 2020-07-07 | ✅✅ |  | first_node.next = self.swapPair(second_node.next) |
 | [两数之和](https://leetcode-cn.com/problems/two-sum/) | 2020-06-06 | 2020-07-06 | ✅✅✅ |  | dict |
